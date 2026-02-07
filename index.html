@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>iPad Pro - Apple</title>
+    <link rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3" />
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #000;
+            color: #f5f5f7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Global Nav ── */
+        .globalnav {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: rgba(29, 29, 31, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .globalnav-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            height: 44px;
+            max-width: 1024px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .globalnav-list a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: -0.01em;
+            transition: color 0.3s;
+        }
+
+        .globalnav-list a:hover {
+            color: #fff;
+        }
+
+        .globalnav-list .nav-apple svg {
+            fill: #ccc;
+            width: 14px;
+            height: 44px;
+            vertical-align: middle;
+        }
+
+        .globalnav-list .nav-icon svg {
+            fill: #ccc;
+            width: 15px;
+            height: 44px;
+            vertical-align: middle;
+        }
+
+        .globalnav-list .nav-bag svg {
+            fill: #ccc;
+            width: 14px;
+            height: 44px;
+            vertical-align: middle;
+        }
+
+        /* ── Ribbon ── */
+        .ribbon {
+            background: #1d1d1f;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .ribbon p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.42859;
+        }
+
+        .ribbon a {
+            color: #2997ff;
+            text-decoration: none;
+        }
+
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        .ribbon .icon-after::after {
+            content: "\203A";
+            margin-left: 2px;
+        }
+
+        /* ── Local Nav ── */
+        .localnav {
+            background: rgba(29, 29, 31, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 44px;
+            z-index: 9998;
+        }
+
+        .localnav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1024px;
+            width: 100%;
+            padding: 0 22px;
+        }
+
+        .localnav-left {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .localnav-title {
+            font-size: 21px;
+            font-weight: 600;
+            color: #f5f5f7;
+            text-decoration: none;
+            letter-spacing: 0.011em;
+        }
+
+        .localnav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        .localnav-links a {
+            color: #868686;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .localnav-links .current {
+            color: #f5f5f7;
+            font-weight: 400;
+        }
+
+        .localnav-links a:hover {
+            color: #f5f5f7;
+        }
+
+        .localnav-buy {
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            border-radius: 980px;
+            padding: 4px 14px;
+            font-size: 12px;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .localnav-buy:hover {
+            background: #0077ed;
+        }
+
+        /* ── Hero Section ── */
+        .section-hero {
+            background: #000;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ── Text fade-in animation ── */
+        @keyframes heroFadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text {
+            opacity: 0;
+        }
+
+        .hero-text.animate-in .hero-eyebrow {
+            animation: heroFadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-text.animate-in .hero-headline {
+            animation: heroFadeInUp 0.8s ease-out 0.15s forwards;
+        }
+
+        .hero-eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.14286;
+            letter-spacing: .007em;
+            color: #f5f5f7;
+            margin-bottom: 2px;
+            opacity: 0;
+        }
+
+        .hero-headline {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -.015em;
+            background: linear-gradient(
+                90deg,
+                #c47b28 0%,
+                #d4a04a 18%,
+                #e0b85e 28%,
+                #f5f5f7 48%,
+                #f5f5f7 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+        }
+
+        /* ── Hero Media (video + fallback) ── */
+        .hero-media {
+            width: 100%;
+            max-width: 1062px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-media video {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-endframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .hero-endframe img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* When video is not supported or hasn't loaded */
+        .no-video .hero-endframe {
+            position: relative;
+            z-index: 2;
+        }
+
+        .no-video video {
+            display: none;
+        }
+
+        /* ── Hero Lockup (Buy + pricing) ── */
+        .hero-lockup {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+        }
+
+        .hero-lockup.animate-in {
+            animation: heroFadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-buy-btn {
+            display: inline-block;
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            border-radius: 980px;
+            padding: 8px 22px;
+            font-size: 17px;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            letter-spacing: -0.022em;
+        }
+
+        .hero-buy-btn:hover {
+            background: #0077ed;
+        }
+
+        .hero-pricing {
+            font-size: 14px;
+            color: #86868b;
+            line-height: 1.42859;
+        }
+
+        .hero-pricing .footnote-link {
+            color: #86868b;
+            text-decoration: none;
+        }
+
+        /* ── Chip Section ── */
+        .section-chip {
+            background: #000;
+            padding: 0 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .chip-content {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .chip-hero-media {
+            width: 100%;
+            max-width: 1062px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .chip-hero-media video {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .chip-hero-endframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .chip-hero-endframe img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .chip-no-video .chip-hero-endframe {
+            position: relative;
+            z-index: 2;
+        }
+
+        .chip-no-video video {
+            display: none;
+        }
+
+        .chip-copy {
+            max-width: 1024px;
+            margin: 28px auto 0;
+            padding: 0 22px;
+        }
+
+        .chip-headline {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.0625;
+            letter-spacing: -.009em;
+            color: #f5f5f7;
+            margin-bottom: 28px;
+        }
+
+        .chip-description {
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 600;
+            letter-spacing: -.022em;
+            color: #86868b;
+            max-width: 83.3%;
+            margin: 0 auto 60px;
+        }
+
+        .chip-description strong {
+            color: #f5f5f7;
+            font-weight: 600;
+        }
+
+        .chip-touts {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .chip-icon img {
+            width: 56px;
+            height: 56px;
+        }
+
+        .chip-stat {
+            font-size: 19px;
+            line-height: 1.42105;
+            font-weight: 600;
+            letter-spacing: .012em;
+            color: #86868b;
+            max-width: 260px;
+            text-align: left;
+        }
+
+        .chip-stat strong {
+            color: #f5f5f7;
+        }
+
+        .chip-stat sup a {
+            color: #86868b;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        /* ── Chip "Learn more" button ── */
+        .chip-learn-more {
+            margin-top: 80px;
+        }
+
+        .chip-learn-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            border-radius: 980px;
+            padding: 7px 18px 7px 22px;
+            color: #f5f5f7;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: inherit;
+        }
+
+        .chip-learn-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .chip-learn-btn .plus-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chip-learn-btn .plus-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #f5f5f7;
+        }
+
+        /* ── Chip scroll animation ── */
+        .chip-animate-target {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .chip-animate-target.animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── iPadOS Section ── */
+        .section-ipados {
+            background: #000;
+            padding: 120px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .ipados-hero-media {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .ipados-lockup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .ipados-lockup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .ipados-lockup-left {
+            width: 24%;
+            flex-shrink: 0;
+            margin-right: -2%;
+            z-index: 1;
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.9s ease-out 0.2s, transform 0.9s ease-out 0.2s;
+        }
+
+        .ipados-lockup-center {
+            width: 54%;
+            flex-shrink: 0;
+            z-index: 2;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.96);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        /* Video plays behind center hardware frame */
+        .ipados-lockup-center video {
+            position: absolute;
+            top: 4.5%;
+            left: 3%;
+            width: 94%;
+            height: 87%;
+            object-fit: cover;
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        .ipados-lockup-center .hw-frame {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ipados-no-video video {
+            display: none;
+        }
+
+        .ipados-lockup-right {
+            width: 28%;
+            flex-shrink: 0;
+            margin-left: -2%;
+            z-index: 1;
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.9s ease-out 0.2s, transform 0.9s ease-out 0.2s;
+        }
+
+        .ipados-lockup.animate-visible .ipados-lockup-left {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .ipados-lockup.animate-visible .ipados-lockup-center {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .ipados-lockup.animate-visible .ipados-lockup-right {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .ipados-copy {
+            max-width: 1024px;
+            margin: 28px auto 0;
+            padding: 0 22px;
+        }
+
+        .ipados-headline {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.0625;
+            letter-spacing: -.009em;
+            color: #f5f5f7;
+            margin-bottom: 28px;
+        }
+
+        .ipados-description {
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 600;
+            letter-spacing: -.022em;
+            color: #86868b;
+            max-width: 83.3%;
+            margin: 0 auto 60px;
+        }
+
+        .ipados-description strong {
+            color: #f5f5f7;
+            font-weight: 600;
+        }
+
+        .ipados-productivity {
+            max-width: 1062px;
+            margin: 0 auto 60px;
+            padding: 0 22px;
+        }
+
+        .ipados-productivity img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .ipados-productivity-label {
+            font-size: 19px;
+            line-height: 1.42105;
+            font-weight: 600;
+            letter-spacing: .012em;
+            color: #86868b;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ipados-productivity-label strong {
+            color: #f5f5f7;
+        }
+
+        .ipados-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1062px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .ipados-grid-item {
+            text-align: left;
+        }
+
+        .ipados-grid-item picture img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ipados-grid-label {
+            font-size: 19px;
+            line-height: 1.42105;
+            font-weight: 600;
+            letter-spacing: .012em;
+            color: #86868b;
+            padding: 0 8px;
+        }
+
+        .ipados-grid-label strong {
+            color: #f5f5f7;
+        }
+
+        .ipados-learn-more {
+            margin-top: 80px;
+        }
+
+        .ipados-learn-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            border-radius: 980px;
+            padding: 7px 18px 7px 22px;
+            color: #f5f5f7;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: inherit;
+        }
+
+        .ipados-learn-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .ipados-learn-btn .plus-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ipados-learn-btn .plus-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #f5f5f7;
+        }
+
+        /* iPadOS scroll animations */
+        .ipados-animate-target {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .ipados-animate-target.animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Display Section ── */
+        .section-display {
+            background: #000;
+            padding: 120px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .display-content {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .display-headline {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.0625;
+            letter-spacing: -.009em;
+            color: #f5f5f7;
+            margin-bottom: 48px;
+            max-width: 83.3%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .display-hero-media {
+            width: 100%;
+            max-width: 1062px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .display-hero-media video {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .display-hero-endframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .display-hero-endframe img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .display-no-video .display-hero-endframe {
+            position: relative;
+            z-index: 2;
+        }
+
+        .display-no-video video {
+            display: none;
+        }
+
+        .display-atv-caption {
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .display-atv-caption a {
+            color: #86868b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .display-atv-caption a:hover {
+            color: #f5f5f7;
+        }
+
+        .display-atv-caption cite {
+            font-style: italic;
+        }
+
+        .display-atv-caption .icon-external::after {
+            content: "\203A";
+            margin-left: 3px;
+            font-style: normal;
+        }
+
+        .display-copy {
+            max-width: 1024px;
+            margin: 48px auto 0;
+            padding: 0 22px;
+        }
+
+        .display-description {
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 600;
+            letter-spacing: -.022em;
+            color: #86868b;
+            max-width: 83.3%;
+            margin: 0 auto;
+        }
+
+        .display-description em {
+            color: #f5f5f7;
+            font-style: italic;
+        }
+
+        .display-touts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px 0;
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 0 22px;
+        }
+
+        .display-tout {
+            text-align: center;
+        }
+
+        .display-stat-content {
+            overflow: hidden;
+        }
+
+        .display-stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.14286;
+            letter-spacing: .007em;
+            color: #f5f5f7;
+            transform: translateY(110%);
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .display-tout:nth-child(2) .display-stat-value { transition-delay: 0.1s; }
+        .display-tout:nth-child(3) .display-stat-value { transition-delay: 0.2s; }
+        .display-tout:nth-child(4) .display-stat-value { transition-delay: 0.15s; }
+        .display-tout:nth-child(5) .display-stat-value { transition-delay: 0.25s; }
+        .display-tout:nth-child(6) .display-stat-value { transition-delay: 0.35s; }
+
+        .display-touts.stats-visible .display-stat-value {
+            transform: translateY(0);
+        }
+
+        .display-stat-caption {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.33337;
+            letter-spacing: -.01em;
+            color: #86868b;
+            margin-top: 4px;
+        }
+
+        .display-learn-more {
+            margin-top: 80px;
+        }
+
+        .display-learn-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            border-radius: 980px;
+            padding: 7px 18px 7px 22px;
+            color: #f5f5f7;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: inherit;
+        }
+
+        .display-learn-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .display-learn-btn .plus-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .display-learn-btn .plus-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #f5f5f7;
+        }
+
+        /* Display scroll animations */
+        .display-animate-target {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .display-animate-target.animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Intelligence Section ── */
+        .section-intelligence {
+            background: #000;
+            padding: 120px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .intel-headline {
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 1.0625;
+            letter-spacing: -.009em;
+            color: #86868b;
+            max-width: 900px;
+            margin: 0 auto 48px;
+            padding: 0 22px;
+        }
+
+        .intel-headline strong {
+            color: #f5f5f7;
+            font-weight: 700;
+        }
+
+        .intel-hero {
+            max-width: 1062px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .intel-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .intel-copy {
+            max-width: 1024px;
+            margin: 48px auto 0;
+            padding: 0 22px;
+            text-align: center;
+        }
+
+        .intel-description {
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 600;
+            letter-spacing: -.022em;
+            color: #86868b;
+            max-width: 83.3%;
+            margin: 0 auto;
+        }
+
+        .intel-description strong {
+            color: #f5f5f7;
+            font-weight: 600;
+        }
+
+        .intel-learn-link {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 17px;
+            font-weight: 600;
+            color: #2997ff;
+            text-decoration: none;
+            letter-spacing: -.022em;
+        }
+
+        .intel-learn-link:hover {
+            text-decoration: underline;
+        }
+
+        .intel-learn-link .icon-more::after {
+            content: "\203A";
+            margin-left: 3px;
+        }
+
+        .intel-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1062px;
+            margin: 80px auto 0;
+            padding: 0 22px;
+        }
+
+        .intel-feature {
+            text-align: left;
+        }
+
+        .intel-feature picture img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .intel-feature-copy {
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 600;
+            letter-spacing: -.022em;
+            color: #86868b;
+            padding: 0 4px;
+        }
+
+        .intel-feature-copy strong {
+            color: #f5f5f7;
+            font-weight: 600;
+        }
+
+        .intel-privacy {
+            max-width: 1062px;
+            margin: 80px auto 0;
+            padding: 0 22px;
+        }
+
+        .intel-privacy-tile {
+            background: #1d1d1f;
+            border-radius: 24px;
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intel-privacy-lock {
+            flex-shrink: 0;
+            width: 120px;
+            position: relative;
+        }
+
+        .intel-privacy-lock video {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .intel-privacy-lock .lock-endframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .intel-privacy-lock .lock-endframe img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .intel-lock-no-video .lock-endframe {
+            position: relative;
+            z-index: 2;
+        }
+
+        .intel-lock-no-video video {
+            display: none;
+        }
+
+        .intel-lock-playing .lock-endframe {
+            display: none;
+        }
+
+        .intel-privacy-text {
+            font-size: 17px;
+            line-height: 1.47059;
+            font-weight: 600;
+            letter-spacing: -.022em;
+            color: #86868b;
+            text-align: left;
+            flex: 1;
+        }
+
+        .intel-privacy-text strong {
+            color: #f5f5f7;
+            font-weight: 600;
+        }
+
+        /* Intelligence scroll animations */
+        .intel-animate-target {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .intel-animate-target.animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1068px) {
+            .hero-eyebrow {
+                font-size: 24px;
+            }
+
+            .hero-headline {
+                font-size: 64px;
+            }
+
+            .hero-media {
+                max-width: 780px;
+            }
+
+            .chip-headline {
+                font-size: 48px;
+            }
+
+            .chip-description {
+                max-width: 100%;
+            }
+
+            .ipados-headline {
+                font-size: 48px;
+            }
+
+            .ipados-description {
+                max-width: 100%;
+            }
+
+            .display-headline {
+                font-size: 48px;
+                max-width: 100%;
+            }
+
+            .display-description {
+                max-width: 100%;
+            }
+
+            .intel-headline {
+                font-size: 48px;
+            }
+
+            .intel-description {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 734px) {
+            .globalnav-list .nav-text {
+                display: none;
+            }
+
+            .globalnav-list {
+                gap: 20px;
+                justify-content: space-between;
+                padding: 0 16px;
+            }
+
+            .localnav-links {
+                display: none;
+            }
+
+            .hero-eyebrow {
+                font-size: 21px;
+            }
+
+            .hero-headline {
+                font-size: 48px;
+            }
+
+            .hero-media {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .section-chip {
+                padding: 80px 0 60px;
+            }
+
+            .chip-headline {
+                font-size: 40px;
+            }
+
+            .chip-headline br.large-only {
+                display: none;
+            }
+
+            .chip-copy {
+                margin-top: 48px;
+            }
+
+            .chip-description {
+                max-width: 100%;
+            }
+
+            .chip-touts {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .chip-stat {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            .ipados-headline {
+                font-size: 40px;
+            }
+
+            .ipados-description {
+                max-width: 100%;
+            }
+
+            .ipados-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .display-headline {
+                font-size: 40px;
+                max-width: 100%;
+            }
+
+            .display-description {
+                max-width: 100%;
+            }
+
+            .display-touts {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px 0;
+            }
+
+            .display-stat-value {
+                font-size: 24px;
+            }
+
+            .intel-headline {
+                font-size: 40px;
+            }
+
+            .intel-description {
+                max-width: 100%;
+            }
+
+            .intel-features {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .intel-privacy-tile {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 24px;
+            }
+
+            .intel-privacy-lock {
+                width: 80px;
+            }
+
+            .intel-privacy-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Hero Section ── -->
+    <main>
+        <section class="section-hero">
+            <div class="hero-text">
+                <h2 class="hero-eyebrow">Himax Pro</h2>
+                <p class="hero-headline">阿祖AI出海</p>
+            </div>
+
+            <div class="hero-media" id="hero-media">
+                <video id="hero-video"
+                       muted
+                       playsinline
+                       preload="auto"
+                       aria-label="Animation of iPad Pro, landscape orientation, front exterior, space black color">
+                </video>
+                <picture class="hero-endframe">
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/hero/hero_endframe__sg50vzdd6sqm_small.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/hero/hero_endframe__sg50vzdd6sqm_small_2x.jpg 2x"
+                        media="(max-width:734px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/hero/hero_endframe__sg50vzdd6sqm_medium.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/hero/hero_endframe__sg50vzdd6sqm_medium_2x.jpg 2x"
+                        media="(max-width:1068px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/hero/hero_endframe__sg50vzdd6sqm_large.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/hero/hero_endframe__sg50vzdd6sqm_large_2x.jpg 2x"
+                        media="(min-width:0px)" />
+                    <img src="https://www.apple.com/v/ipad-pro/av/images/overview/hero/hero_endframe__sg50vzdd6sqm_large.jpg"
+                         alt="iPad Pro, landscape orientation, front exterior, space black color, aluminum and glass enclosure" />
+                </picture>
+            </div>
+
+            <div class="hero-lockup" id="hero-lockup">
+                <a href="#" class="hero-buy-btn">Buy</a>
+                <p class="hero-pricing">From $999 or $83.25/mo. for 12 mo.<a href="#" class="footnote-link">*</a></p>
+            </div>
+        </section>
+
+        <!-- ── Apple Intelligence Section ── -->
+        <section class="section-intelligence">
+            <div class="intel-animate-target" id="intel-headline-block">
+                <h3 class="intel-headline"><strong>Apple Intelligence.</strong><br />Works hard. You take it easy.</h3>
+            </div>
+
+            <div class="intel-hero intel-animate-target" id="intel-hero-block">
+                <picture>
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/hero__mdl3lpkglcia_small.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/hero__mdl3lpkglcia_small_2x.jpg 2x"
+                        media="(max-width:734px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/hero__mdl3lpkglcia_medium.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/hero__mdl3lpkglcia_medium_2x.jpg 2x"
+                        media="(max-width:1068px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/hero__mdl3lpkglcia_large.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/hero__mdl3lpkglcia_large_2x.jpg 2x"
+                        media="(min-width:0px)" />
+                    <img src="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/hero__mdl3lpkglcia_large.jpg"
+                         alt="iPad Pro showing Apple Intelligence Image Wand feature with Apple Pencil Pro" />
+                </picture>
+            </div>
+
+            <div class="intel-copy intel-animate-target" id="intel-copy-block">
+                <p class="intel-description">iPad Pro is built for <strong>Apple&nbsp;Intelligence</strong>. Create, communicate, and get things done effortlessly with groundbreaking privacy protections at every step.</p>
+                <a href="https://www.apple.com/apple-intelligence/" class="intel-learn-link">Learn more about Apple&nbsp;Intelligence<span class="icon-more"></span></a>
+            </div>
+
+            <div class="intel-features intel-animate-target" id="intel-features-block">
+                <div class="intel-feature">
+                    <picture>
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/chatgpt__bc6ke6yg5vf6_small.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/chatgpt__bc6ke6yg5vf6_small_2x.jpg 2x"
+                            media="(max-width:734px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/chatgpt__bc6ke6yg5vf6_medium.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/chatgpt__bc6ke6yg5vf6_medium_2x.jpg 2x"
+                            media="(max-width:1068px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/chatgpt__bc6ke6yg5vf6_large.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/chatgpt__bc6ke6yg5vf6_large_2x.jpg 2x"
+                            media="(min-width:0px)" />
+                        <img src="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/chatgpt__bc6ke6yg5vf6_large.jpg"
+                             alt="ChatGPT integration with Apple Intelligence" />
+                    </picture>
+                    <p class="intel-feature-copy">Do more with the help of Siri and <strong>ChatGPT</strong>. Explore new visual styles in Image Playground, ask questions about photos and documents, and leverage additional expertise.</p>
+                </div>
+                <div class="intel-feature">
+                    <picture>
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/shortcuts__eny0655cq0ya_small.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/shortcuts__eny0655cq0ya_small_2x.jpg 2x"
+                            media="(max-width:734px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/shortcuts__eny0655cq0ya_medium.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/shortcuts__eny0655cq0ya_medium_2x.jpg 2x"
+                            media="(max-width:1068px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/shortcuts__eny0655cq0ya_large.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/shortcuts__eny0655cq0ya_large_2x.jpg 2x"
+                            media="(min-width:0px)" />
+                        <img src="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/shortcuts__eny0655cq0ya_large.jpg"
+                             alt="Apple Intelligence shortcuts" />
+                    </picture>
+                    <p class="intel-feature-copy"><strong>Accelerate your workflows</strong> with shortcuts, intelligent actions that can summarize text, create images, or tap into Apple Intelligence models.</p>
+                </div>
+                <div class="intel-feature">
+                    <picture>
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/clean_up__eiqg69imx1g2_small.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/clean_up__eiqg69imx1g2_small_2x.jpg 2x"
+                            media="(max-width:734px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/clean_up__eiqg69imx1g2_medium.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/clean_up__eiqg69imx1g2_medium_2x.jpg 2x"
+                            media="(max-width:1068px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/clean_up__eiqg69imx1g2_large.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/clean_up__eiqg69imx1g2_large_2x.jpg 2x"
+                            media="(min-width:0px)" />
+                        <img src="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/clean_up__eiqg69imx1g2_large.jpg"
+                             alt="Clean Up feature removing distractions from photos" />
+                    </picture>
+                    <p class="intel-feature-copy">Use Clean Up to instantly <strong>remove unwanted distractions</strong> in your photos. Identify the object and remove it with a tap. Or for even greater precision, use your Apple&nbsp;Pencil.</p>
+                </div>
+            </div>
+
+            <div class="intel-privacy intel-animate-target" id="intel-privacy-block">
+                <div class="intel-privacy-tile">
+                    <div class="intel-privacy-lock" id="intel-lock-media">
+                        <video id="intel-lock-video"
+                               muted
+                               playsinline
+                               preload="none"
+                               aria-label="Apple logo lock animation highlighting privacy protection">
+                        </video>
+                        <picture class="lock-endframe">
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/lock_endframe__flta5zfpfyuu_small.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/lock_endframe__flta5zfpfyuu_small_2x.png 2x"
+                                media="(max-width:734px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/lock_endframe__flta5zfpfyuu_medium.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/lock_endframe__flta5zfpfyuu_medium_2x.png 2x"
+                                media="(max-width:1068px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/lock_endframe__flta5zfpfyuu_large.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/lock_endframe__flta5zfpfyuu_large_2x.png 2x"
+                                media="(min-width:0px)" />
+                            <img src="https://www.apple.com/v/ipad-pro/av/images/overview/intelligence/lock_endframe__flta5zfpfyuu_large.png"
+                                 alt="Apple logo lock icon" />
+                        </picture>
+                    </div>
+                    <p class="intel-privacy-text">Apple Intelligence is <strong>designed to protect your privacy</strong> at every step. It's integrated into the core of iPad&nbsp;Pro through on-device processing. So it's aware of your personal information without collecting your personal information. And with groundbreaking Private Cloud Compute, Apple Intelligence can draw on larger server-based models, running on Apple&nbsp;silicon, to handle more complex requests for you while protecting your privacy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── M5 Chip Section ── -->
+        <section class="section-chip">
+            <div class="chip-hero-media" id="chip-hero-media">
+                <video id="chip-video"
+                       muted
+                       playsinline
+                       preload="none"
+                       aria-label="Animation of iPad Pro displaying a flutter of apps, iPad is attached to Magic Keyboard in landscape orientation">
+                </video>
+                <picture class="chip-hero-endframe">
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/chip/chip_hero_endframe__dk2kurwhju6a_small.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/chip/chip_hero_endframe__dk2kurwhju6a_small_2x.jpg 2x"
+                        media="(max-width:734px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/chip/chip_hero_endframe__dk2kurwhju6a_medium.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/chip/chip_hero_endframe__dk2kurwhju6a_medium_2x.jpg 2x"
+                        media="(max-width:1068px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/chip/chip_hero_endframe__dk2kurwhju6a_large.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/chip/chip_hero_endframe__dk2kurwhju6a_large_2x.jpg 2x"
+                        media="(min-width:0px)" />
+                    <img src="https://www.apple.com/v/ipad-pro/av/images/overview/chip/chip_hero_endframe__dk2kurwhju6a_large.jpg"
+                         alt="iPad Pro attached to Magic Keyboard showing multiple app windows" />
+                </picture>
+            </div>
+
+            <div class="chip-copy">
+                <div class="chip-animate-target" id="chip-text-block">
+                    <h3 class="chip-headline">M5.<br />Creator. <br class="large-only" />Accelerator.</h3>
+                    <p class="chip-description">The M5 chip pushes the limits of what's possible on iPad&nbsp;Pro to drive performance and efficiency like never before. A next-generation 10&#x2011;core GPU with powerful new Neural Accelerators <strong>dramatically speeds up AI tasks</strong> — from large language model (LLM) token generation to generative imagery. And the multithreaded CPU performance and fast memory deliver breakthrough speed for your workflows.</p>
+                </div>
+
+                <div class="chip-touts chip-animate-target" id="chip-stats-block">
+                    <div class="chip-icon">
+                        <picture>
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/chip/icon_chip_m5__ftcshooavwya_small.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/chip/icon_chip_m5__ftcshooavwya_small_2x.png 2x"
+                                media="(max-width:734px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/chip/icon_chip_m5__ftcshooavwya_medium.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/chip/icon_chip_m5__ftcshooavwya_medium_2x.png 2x"
+                                media="(max-width:1068px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/chip/icon_chip_m5__ftcshooavwya_large.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/chip/icon_chip_m5__ftcshooavwya_large_2x.png 2x"
+                                media="(min-width:0px)" />
+                            <img src="https://www.apple.com/v/ipad-pro/av/images/overview/chip/icon_chip_m5__ftcshooavwya_large.png"
+                                 alt="Apple M5 chip logo" />
+                        </picture>
+                    </div>
+                    <figure class="chip-stat">
+                        Up to <strong>6.7x faster</strong> pro rendering performance with ray tracing than iPad&nbsp;Pro with M1<sup><a href="#">3</a></sup>
+                    </figure>
+                    <figure class="chip-stat">
+                        Up to <strong>4x faster</strong> AI image generation than iPad&nbsp;Pro with M1<sup><a href="#">4</a></sup>
+                    </figure>
+                </div>
+
+                <div class="chip-learn-more chip-animate-target" id="chip-learn-block">
+                    <button class="chip-learn-btn">
+                        <span>Learn how M5 powers performance</span>
+                        <span class="plus-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                                <path d="M25.5,16.5l-5.9,0l0-5.9C19.6,9.7,18.9,9,18,9c-0.9,0-1.5,0.7-1.5,1.5l0,5.9l-5.9,0h0
+                                  C9.7,16.4,9,17.1,9,18c0,0.9,0.7,1.5,1.5,1.5l5.9,0l0,5.9c0,0.9,0.7,1.5,1.5,1.5c0.9,0,1.5-0.7,1.5-1.5l0-5.9l5.9,0h0
+                                  c0.9,0,1.5-0.7,1.5-1.5C27,17.2,26.3,16.5,25.5,16.5L25.5,16.5z"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── iPadOS Section ── -->
+        <section class="section-ipados">
+            <div class="ipados-hero-media" id="ipados-hero-media">
+                <div class="ipados-lockup" id="ipados-lockup">
+                    <div class="ipados-lockup-left">
+                        <picture>
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_left__cfj9zuqxxr36_small.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_left__cfj9zuqxxr36_small_2x.png 2x"
+                                media="(max-width:734px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_left__cfj9zuqxxr36_medium.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_left__cfj9zuqxxr36_medium_2x.png 2x"
+                                media="(max-width:1068px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_left__cfj9zuqxxr36_large.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_left__cfj9zuqxxr36_large_2x.png 2x"
+                                media="(min-width:0px)" />
+                            <img src="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_left__cfj9zuqxxr36_large.png"
+                                 alt="iPad Pro showing photo editing app" />
+                        </picture>
+                    </div>
+                    <div class="ipados-lockup-center">
+                        <video id="ipados-video"
+                               muted
+                               playsinline
+                               preload="none"
+                               aria-label="Animation showing iPadOS screen content">
+                        </video>
+                        <picture class="hw-frame">
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_center_hw__bov8mtghx9zm_small.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_center_hw__bov8mtghx9zm_small_2x.png 2x"
+                                media="(max-width:734px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_center_hw__bov8mtghx9zm_medium.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_center_hw__bov8mtghx9zm_medium_2x.png 2x"
+                                media="(max-width:1068px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_center_hw__bov8mtghx9zm_large.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_center_hw__bov8mtghx9zm_large_2x.png 2x"
+                                media="(min-width:0px)" />
+                            <img src="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_center_hw__bov8mtghx9zm_large.png"
+                                 alt="iPad Pro center hardware frame" />
+                        </picture>
+                    </div>
+                    <div class="ipados-lockup-right">
+                        <picture>
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_right__b0eb2sr43aj6_small.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_right__b0eb2sr43aj6_small_2x.png 2x"
+                                media="(max-width:734px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_right__b0eb2sr43aj6_medium.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_right__b0eb2sr43aj6_medium_2x.png 2x"
+                                media="(max-width:1068px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_right__b0eb2sr43aj6_large.png,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_right__b0eb2sr43aj6_large_2x.png 2x"
+                                media="(min-width:0px)" />
+                            <img src="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/hero_right__b0eb2sr43aj6_large.png"
+                                 alt="iPad Pro showing notes and math app" />
+                        </picture>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ipados-copy">
+                <div class="ipados-animate-target" id="ipados-text-block">
+                    <h3 class="ipados-headline">iPadOS and apps.<br />A tour de workforce.</h3>
+                    <p class="ipados-description">iPadOS is designed to harness the power and versatility of iPad&nbsp;Pro. <strong>Powerful multitasking features like Stage Manager</strong> let you resize and overlap apps in any configuration. Files, a desktop-class browser, and amazing apps from the App&nbsp;Store unlock the kind of workflows you never thought possible on a tablet.</p>
+                </div>
+
+                <div class="ipados-productivity ipados-animate-target" id="ipados-productivity-block">
+                    <picture>
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/productivity__np4e25g6v7ma_small.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/ipados/productivity__np4e25g6v7ma_small_2x.jpg 2x"
+                            media="(max-width:734px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/productivity__np4e25g6v7ma_medium.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/ipados/productivity__np4e25g6v7ma_medium_2x.jpg 2x"
+                            media="(max-width:1068px)" />
+                        <source
+                            srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/productivity__np4e25g6v7ma_large.jpg,
+                                    https://www.apple.com/v/ipad-pro/av/images/overview/ipados/productivity__np4e25g6v7ma_large_2x.jpg 2x"
+                            media="(min-width:0px)" />
+                        <img src="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/productivity__np4e25g6v7ma_large.jpg"
+                             alt="iPad Pro showing productivity workflow with multiple app windows" />
+                    </picture>
+                    <p class="ipados-productivity-label"><strong>Next-level productivity.</strong> Open more windows at once, resize and rearrange them your way, and split your screen into thirds or quarters.</p>
+                </div>
+
+                <div class="ipados-grid ipados-animate-target" id="ipados-grid-block">
+                    <div class="ipados-grid-item">
+                        <picture>
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/background_tasks__397734wqttu2_small.jpg,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/background_tasks__397734wqttu2_small_2x.jpg 2x"
+                                media="(max-width:734px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/background_tasks__397734wqttu2_medium.jpg,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/background_tasks__397734wqttu2_medium_2x.jpg 2x"
+                                media="(max-width:1068px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/background_tasks__397734wqttu2_large.jpg,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/background_tasks__397734wqttu2_large_2x.jpg 2x"
+                                media="(min-width:0px)" />
+                            <img src="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/background_tasks__397734wqttu2_large.jpg"
+                                 alt="iPad Pro running background tasks" />
+                        </picture>
+                        <p class="ipados-grid-label"><strong>Background tasks</strong> let you do things like download files or export video while you work in other apps</p>
+                    </div>
+                    <div class="ipados-grid-item">
+                        <picture>
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/pro_apps__c0kqpjcck6eu_small.jpg,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/pro_apps__c0kqpjcck6eu_small_2x.jpg 2x"
+                                media="(max-width:734px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/pro_apps__c0kqpjcck6eu_medium.jpg,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/pro_apps__c0kqpjcck6eu_medium_2x.jpg 2x"
+                                media="(max-width:1068px)" />
+                            <source
+                                srcset="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/pro_apps__c0kqpjcck6eu_large.jpg,
+                                        https://www.apple.com/v/ipad-pro/av/images/overview/ipados/pro_apps__c0kqpjcck6eu_large_2x.jpg 2x"
+                                media="(min-width:0px)" />
+                            <img src="https://www.apple.com/v/ipad-pro/av/images/overview/ipados/pro_apps__c0kqpjcck6eu_large.jpg"
+                                 alt="iPad Pro displaying pro apps" />
+                        </picture>
+                        <p class="ipados-grid-label"><strong>Pro apps</strong> like Final Cut Pro, Logic Pro, and Octane X take full advantage of M5</p>
+                    </div>
+                </div>
+
+                <div class="ipados-learn-more ipados-animate-target" id="ipados-learn-block">
+                    <button class="ipados-learn-btn">
+                        <span>Explore what you can do on iPad</span>
+                        <span class="plus-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                                <path d="M25.5,16.5l-5.9,0l0-5.9C19.6,9.7,18.9,9,18,9c-0.9,0-1.5,0.7-1.5,1.5l0,5.9l-5.9,0h0
+                                  C9.7,16.4,9,17.1,9,18c0,0.9,0.7,1.5,1.5,1.5l5.9,0l0,5.9c0,0.9,0.7,1.5,1.5,1.5c0.9,0,1.5-0.7,1.5-1.5l0-5.9l5.9,0h0
+                                  c0.9,0,1.5-0.7,1.5-1.5C27,17.2,26.3,16.5,25.5,16.5L25.5,16.5z"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Display Section ── -->
+        <section class="section-display">
+            <div class="display-content">
+                <h3 class="display-headline display-animate-target" id="display-headline">Ultra Retina XDR.<br />The world's most advanced display.</h3>
+            </div>
+
+            <div class="display-hero-media" id="display-hero-media">
+                <video id="display-video"
+                       muted
+                       playsinline
+                       preload="none"
+                       aria-label="iPad Pro, display with animation of 2 people entering a futuristic interior in the Apple TV+ series Silo.">
+                </video>
+                <picture class="display-hero-endframe">
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/display/display_hero_endframe__f4adhiayakya_small.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/display/display_hero_endframe__f4adhiayakya_small_2x.jpg 2x"
+                        media="(max-width:734px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/display/display_hero_endframe__f4adhiayakya_medium.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/display/display_hero_endframe__f4adhiayakya_medium_2x.jpg 2x"
+                        media="(max-width:1068px)" />
+                    <source
+                        srcset="https://www.apple.com/v/ipad-pro/av/images/overview/display/display_hero_endframe__f4adhiayakya_large.jpg,
+                                https://www.apple.com/v/ipad-pro/av/images/overview/display/display_hero_endframe__f4adhiayakya_large_2x.jpg 2x"
+                        media="(min-width:0px)" />
+                    <img src="https://www.apple.com/v/ipad-pro/av/images/overview/display/display_hero_endframe__f4adhiayakya_large.jpg"
+                         alt="iPad Pro display showing a scene from Silo on Apple TV+" />
+                </picture>
+            </div>
+
+            <p class="display-atv-caption">
+                <a href="https://tv.apple.com/us/show/silo/umc.cmc.3yksgc857px0k0rqe5zd4jice" rel="nofollow">Stream <cite>Silo</cite> on Apple TV+<span class="icon-external"></span></a>
+            </p>
+
+            <div class="display-copy display-animate-target" id="display-copy-block">
+                <p class="display-description">The Ultra Retina XDR display is built with groundbreaking tandem OLED technology, which generates amazing brightness, precise contrast, and extreme dynamic range performance. Advanced technologies like ProMotion and True Tone give you a <em>jaw&#x2011;dropping visual experience</em>. And you can use Reference Mode for color&#x2011;accurate workflows.</p>
+            </div>
+
+            <ul class="display-touts" id="display-touts">
+                <li class="display-tout">
+                    <div class="display-stat-content">
+                        <p class="display-stat-value">1000 nits</p>
+                    </div>
+                    <p class="display-stat-caption">full-screen brightness</p>
+                </li>
+                <li class="display-tout">
+                    <div class="display-stat-content">
+                        <p class="display-stat-value">1600 nits</p>
+                    </div>
+                    <p class="display-stat-caption">peak HDR brightness</p>
+                </li>
+                <li class="display-tout">
+                    <div class="display-stat-content">
+                        <p class="display-stat-value">2,000,000:1</p>
+                    </div>
+                    <p class="display-stat-caption">contrast ratio</p>
+                </li>
+                <li class="display-tout">
+                    <div class="display-stat-content">
+                        <p class="display-stat-value">True Tone</p>
+                    </div>
+                    <p class="display-stat-caption">for comfortable viewing</p>
+                </li>
+                <li class="display-tout">
+                    <div class="display-stat-content">
+                        <p class="display-stat-value">ProMotion</p>
+                    </div>
+                    <p class="display-stat-caption">adaptive 10–120Hz refresh rate</p>
+                </li>
+                <li class="display-tout">
+                    <div class="display-stat-content">
+                        <p class="display-stat-value">P3</p>
+                    </div>
+                    <p class="display-stat-caption">wide color</p>
+                </li>
+            </ul>
+
+            <div class="display-learn-more display-animate-target" id="display-learn-block">
+                <button class="display-learn-btn">
+                    <span>Immerse yourself in Ultra Retina XDR</span>
+                    <span class="plus-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                            <path d="M25.5,16.5l-5.9,0l0-5.9C19.6,9.7,18.9,9,18,9c-0.9,0-1.5,0.7-1.5,1.5l0,5.9l-5.9,0h0
+                              C9.7,16.4,9,17.1,9,18c0,0.9,0.7,1.5,1.5,1.5l5.9,0l0,5.9c0,0.9,0.7,1.5,1.5,1.5c0.9,0,1.5-0.7,1.5-1.5l0-5.9l5.9,0h0
+                              c0.9,0,1.5-0.7,1.5-1.5C27,17.2,26.3,16.5,25.5,16.5L25.5,16.5z"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            /* ── Helper: pick video src by viewport ── */
+            function getVideoSrc(basePath, excludeRetinaLarge) {
+                var isRetina = window.devicePixelRatio > 1;
+                var w = window.innerWidth;
+                var size, suffix;
+                if (w <= 734) {
+                    size = 'small';
+                    suffix = isRetina ? '_2x' : '';
+                } else if (w <= 1068) {
+                    size = 'medium';
+                    suffix = isRetina ? '_2x' : '';
+                } else {
+                    size = 'large';
+                    suffix = (isRetina && !excludeRetinaLarge) ? '_2x' : '';
+                }
+                return basePath + size + suffix + '.mp4';
+            }
+
+            /* ═══════════════════════════════════════
+               HERO SECTION
+               ═══════════════════════════════════════ */
+            var heroBasePath = 'https://www.apple.com/105/media/us/ipad-pro/2025/adee90db-c01e-430d-b726-fe64c0063f08/anim/hero/';
+            var heroText = document.querySelector('.hero-text');
+            var heroLockup = document.getElementById('hero-lockup');
+            var heroMedia = document.getElementById('hero-media');
+            var heroVideo = document.getElementById('hero-video');
+
+            function initHeroVideo() {
+                heroVideo.src = getVideoSrc(heroBasePath, false);
+                heroVideo.addEventListener('canplay', function onCanPlay() {
+                    heroVideo.removeEventListener('canplay', onCanPlay);
+                    setTimeout(function() {
+                        heroVideo.play().catch(function() {
+                            heroMedia.classList.add('no-video');
+                        });
+                    }, 600);
+                });
+                heroVideo.addEventListener('error', function() {
+                    heroMedia.classList.add('no-video');
+                });
+                heroVideo.load();
+            }
+
+            function startHeroSequence() {
+                heroText.style.opacity = '1';
+                heroText.classList.add('animate-in');
+                heroLockup.classList.add('animate-in');
+                initHeroVideo();
+            }
+
+            if (document.readyState === 'complete') {
+                startHeroSequence();
+            } else {
+                window.addEventListener('load', function() {
+                    setTimeout(startHeroSequence, 100);
+                });
+            }
+
+            /* ═══════════════════════════════════════
+               CHIP SECTION – scroll-triggered video
+               ═══════════════════════════════════════ */
+            var chipBasePath = 'https://www.apple.com/105/media/us/ipad-pro/2025/adee90db-c01e-430d-b726-fe64c0063f08/anim/chip-hero/';
+            var chipMedia = document.getElementById('chip-hero-media');
+            var chipVideo = document.getElementById('chip-video');
+            var chipVideoLoaded = false;
+            var chipVideoReady = false;
+            var chipVideoPlayed = false;
+
+            /* Preload video source (don't play yet) */
+            function preloadChipVideo() {
+                if (chipVideoLoaded) return;
+                chipVideoLoaded = true;
+                chipVideo.src = getVideoSrc(chipBasePath, true);
+                chipVideo.addEventListener('canplay', function onCanPlay() {
+                    chipVideo.removeEventListener('canplay', onCanPlay);
+                    chipVideoReady = true;
+                });
+                chipVideo.addEventListener('error', function() {
+                    chipMedia.classList.add('chip-no-video');
+                });
+                chipVideo.load();
+            }
+
+            /* Play video only when section is visible */
+            function playChipVideo() {
+                if (chipVideoPlayed) return;
+                chipVideoPlayed = true;
+                if (chipVideoReady) {
+                    chipVideo.play().catch(function() {
+                        chipMedia.classList.add('chip-no-video');
+                    });
+                } else {
+                    chipVideo.addEventListener('canplay', function onReady() {
+                        chipVideo.removeEventListener('canplay', onReady);
+                        chipVideo.play().catch(function() {
+                            chipMedia.classList.add('chip-no-video');
+                        });
+                    });
+                }
+            }
+
+            /* Observer 1: preload when approaching (300px before visible) */
+            var chipPreloadObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        preloadChipVideo();
+                        chipPreloadObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px 300px 0px' });
+
+            /* Observer 2: play only when section actually enters viewport */
+            var chipPlayObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        playChipVideo();
+                        chipPlayObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            if (chipMedia) {
+                chipPreloadObserver.observe(chipMedia);
+                chipPlayObserver.observe(chipMedia);
+            }
+
+            /* ── Scroll fade-in for chip text/stats ── */
+            var animTargets = document.querySelectorAll('.chip-animate-target');
+            var textObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                        textObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            animTargets.forEach(function(el) {
+                textObserver.observe(el);
+            });
+
+            /* ═══════════════════════════════════════
+               iPadOS SECTION – scroll-triggered animations
+               ═══════════════════════════════════════ */
+            var ipadosBasePath = 'https://www.apple.com/105/media/us/ipad-pro/2025/adee90db-c01e-430d-b726-fe64c0063f08/anim/ipados-hero/';
+            var ipadosMedia = document.getElementById('ipados-hero-media');
+            var ipadosLockup = document.getElementById('ipados-lockup');
+            var ipadosVideo = document.getElementById('ipados-video');
+            var ipadosVideoLoaded = false;
+            var ipadosVideoReady = false;
+            var ipadosVideoPlayed = false;
+
+            /* Preload video source (don't play yet) */
+            function preloadIpadosVideo() {
+                if (ipadosVideoLoaded) return;
+                ipadosVideoLoaded = true;
+                ipadosVideo.src = getVideoSrc(ipadosBasePath, true);
+                ipadosVideo.addEventListener('canplay', function onCanPlay() {
+                    ipadosVideo.removeEventListener('canplay', onCanPlay);
+                    ipadosVideoReady = true;
+                });
+                ipadosVideo.addEventListener('error', function() {
+                    ipadosMedia.classList.add('ipados-no-video');
+                });
+                ipadosVideo.load();
+            }
+
+            /* Play video only when section is visible */
+            function playIpadosVideo() {
+                if (ipadosVideoPlayed) return;
+                ipadosVideoPlayed = true;
+                if (ipadosVideoReady) {
+                    ipadosVideo.play().catch(function() {
+                        ipadosMedia.classList.add('ipados-no-video');
+                    });
+                } else {
+                    ipadosVideo.addEventListener('canplay', function onReady() {
+                        ipadosVideo.removeEventListener('canplay', onReady);
+                        ipadosVideo.play().catch(function() {
+                            ipadosMedia.classList.add('ipados-no-video');
+                        });
+                    });
+                }
+            }
+
+            /* Observer: trigger lockup slide-in + video preload/play */
+            var ipadosPreloadObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        preloadIpadosVideo();
+                        ipadosPreloadObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px 300px 0px' });
+
+            var ipadosPlayObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        /* Trigger lockup entrance animations */
+                        ipadosLockup.classList.add('animate-visible');
+                        /* Play video after a short delay for the entrance animation */
+                        setTimeout(function() {
+                            playIpadosVideo();
+                        }, 400);
+                        ipadosPlayObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            if (ipadosMedia) {
+                ipadosPreloadObserver.observe(ipadosMedia);
+                ipadosPlayObserver.observe(ipadosMedia);
+            }
+
+            /* ── Scroll fade-in for iPadOS text/images ── */
+            var ipadosAnimTargets = document.querySelectorAll('.ipados-animate-target');
+            var ipadosTextObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                        ipadosTextObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            ipadosAnimTargets.forEach(function(el) {
+                ipadosTextObserver.observe(el);
+            });
+
+            /* ═══════════════════════════════════════
+               DISPLAY SECTION – scroll-triggered video
+               ═══════════════════════════════════════ */
+            var displayBasePath = 'https://www.apple.com/105/media/us/ipad-pro/2025/adee90db-c01e-430d-b726-fe64c0063f08/anim/display-hero/';
+            var displayMedia = document.getElementById('display-hero-media');
+            var displayVideo = document.getElementById('display-video');
+            var displayVideoLoaded = false;
+            var displayVideoReady = false;
+            var displayVideoPlayed = false;
+
+            function preloadDisplayVideo() {
+                if (displayVideoLoaded) return;
+                displayVideoLoaded = true;
+                displayVideo.src = getVideoSrc(displayBasePath, true);
+                displayVideo.addEventListener('canplay', function onCanPlay() {
+                    displayVideo.removeEventListener('canplay', onCanPlay);
+                    displayVideoReady = true;
+                });
+                displayVideo.addEventListener('error', function() {
+                    displayMedia.classList.add('display-no-video');
+                });
+                displayVideo.load();
+            }
+
+            function playDisplayVideo() {
+                if (displayVideoPlayed) return;
+                displayVideoPlayed = true;
+                if (displayVideoReady) {
+                    displayVideo.play().catch(function() {
+                        displayMedia.classList.add('display-no-video');
+                    });
+                } else {
+                    displayVideo.addEventListener('canplay', function onReady() {
+                        displayVideo.removeEventListener('canplay', onReady);
+                        displayVideo.play().catch(function() {
+                            displayMedia.classList.add('display-no-video');
+                        });
+                    });
+                }
+            }
+
+            var displayPreloadObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        preloadDisplayVideo();
+                        displayPreloadObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px 300px 0px' });
+
+            var displayPlayObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        playDisplayVideo();
+                        displayPlayObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            if (displayMedia) {
+                displayPreloadObserver.observe(displayMedia);
+                displayPlayObserver.observe(displayMedia);
+            }
+
+            /* ── Stat touts slide-up animation ── */
+            var displayTouts = document.getElementById('display-touts');
+            var displayStatsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('stats-visible');
+                        displayStatsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (displayTouts) {
+                displayStatsObserver.observe(displayTouts);
+            }
+
+            /* ── Scroll fade-in for display text ── */
+            var displayAnimTargets = document.querySelectorAll('.display-animate-target');
+            var displayTextObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                        displayTextObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            displayAnimTargets.forEach(function(el) {
+                displayTextObserver.observe(el);
+            });
+
+            /* ═══════════════════════════════════════
+               INTELLIGENCE SECTION – lock video + animations
+               ═══════════════════════════════════════ */
+            var lockBasePath = 'https://www.apple.com/105/media/us/ipad-pro/2025/adee90db-c01e-430d-b726-fe64c0063f08/anim/lock/';
+            var lockMedia = document.getElementById('intel-lock-media');
+            var lockVideo = document.getElementById('intel-lock-video');
+            var lockVideoLoaded = false;
+            var lockVideoReady = false;
+            var lockVideoPlayed = false;
+
+            function preloadLockVideo() {
+                if (lockVideoLoaded) return;
+                lockVideoLoaded = true;
+                /* Lock animation uses alpha transparency — available as .webm (Chrome/Firefox) and .mov (Safari) */
+                var w = window.innerWidth;
+                var size = w <= 734 ? 'small' : w <= 1068 ? 'medium' : 'large';
+                var sourceWebm = document.createElement('source');
+                sourceWebm.src = lockBasePath + size + '.webm';
+                sourceWebm.type = 'video/webm';
+                var sourceMov = document.createElement('source');
+                sourceMov.src = lockBasePath + size + '.mov';
+                sourceMov.type = 'video/quicktime';
+                lockVideo.appendChild(sourceWebm);
+                lockVideo.appendChild(sourceMov);
+                lockVideo.addEventListener('canplay', function onCanPlay() {
+                    lockVideo.removeEventListener('canplay', onCanPlay);
+                    lockVideoReady = true;
+                });
+                lockVideo.addEventListener('error', function() {
+                    lockMedia.classList.add('intel-lock-no-video');
+                });
+                lockVideo.load();
+            }
+
+            function playLockVideo() {
+                if (lockVideoPlayed) return;
+                lockVideoPlayed = true;
+                function doPlay() {
+                    lockMedia.classList.add('intel-lock-playing');
+                    lockVideo.play().catch(function() {
+                        lockMedia.classList.remove('intel-lock-playing');
+                        lockMedia.classList.add('intel-lock-no-video');
+                    });
+                }
+                if (lockVideoReady) {
+                    doPlay();
+                } else {
+                    lockVideo.addEventListener('canplay', function onReady() {
+                        lockVideo.removeEventListener('canplay', onReady);
+                        doPlay();
+                    });
+                }
+            }
+
+            var lockPreloadObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        preloadLockVideo();
+                        lockPreloadObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px 300px 0px' });
+
+            var lockPlayObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        playLockVideo();
+                        lockPlayObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (lockMedia) {
+                lockPreloadObserver.observe(lockMedia);
+                lockPlayObserver.observe(lockMedia);
+            }
+
+            /* ── Scroll fade-in for intelligence section ── */
+            var intelAnimTargets = document.querySelectorAll('.intel-animate-target');
+            var intelTextObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                        intelTextObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            intelAnimTargets.forEach(function(el) {
+                intelTextObserver.observe(el);
+            });
+        })();
+    </script>
+
+</body>
+</html>
